@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const FALLBACK_NAME = "kuaishou-skill";
+const FALLBACK_NAME = "ks-watch";
 
 let cached = null;
 function skillName() {
