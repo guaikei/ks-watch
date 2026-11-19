@@ -6,6 +6,11 @@ name: ks-watch
 description: "快手舆情监控数据源（只读）：关键词搜视频、博主作品与粉丝数据、视频评论，输出 JSON，不登录不发布。触发词：快手、Kuaishou、kwai、快手搜索、快手评论、快手博主。用户要查快手视频、评论、爆款选题、竞品监控、KOL 筛选或评论舆情时使用；抖音、小红书、B站、微博、公众号不要用本技能。"
 license: MIT
 version: 1.1.3
+display_name: "快手舆情监控｜评论情绪·负面识别·品牌提及·口碑风向"
+display_name_en: "Kuaishou Watch"
+description_zh: "快手公开数据的只读抓取工具，三条命令覆盖舆情分析全链路：①search-cli.js 关键词搜视频，可按综合/最新/最多点赞排序，限定近 1 日、近 7 日、近 1 月与视频时长（1 分钟内、1-5 分钟、超过 5 分钟），取回点赞、播放、评论数与作者标识；②post-cli.js 输入博主主页链接或纯数字 user_id，取回作品列表（可排序最新/最热）与博主粉丝数、获赞数、关注数，limit 设为 0 只取账号画像；③comment-cli.js 输入视频链接、短链或 3x 视频 id，取回评论数组用于评论情绪归类、负面识别、品牌提及与口碑风向判断。所有命令输出统一信封 JSON（status/error_code/message/request/metadata/results/cost），成功为数组或 post+user 对象，NO_MATCH 表示无匹配内容而非失败。按量 Token 单次最多 10000 条；包月 Token 上限为搜索 30、作品 50、评论 60，超限返回 PLAN_LIMIT，请降 limit 或升级套餐。无需登录快手账号、不发布、不触碰私密数据，仅读取公开内容，适合内容选题、竞品与 KOL 互动数据核查、评论区舆情复盘。触发场景：快手舆情、快手评论、快手口碑、快手竞品、快手 KOL。"
+description_en: "Read-only scraper for public Kuaishou (Kwai) data, in three commands. search-cli.js searches videos by keyword, sortable by relevance, newest or most-liked, with 1/7/30-day and duration filters, returning like, play and comment counts with author ids. post-cli.js takes a profile URL or user_id and returns posts (newest or hottest) plus follower, like and following totals; limit 0 returns the profile only. comment-cli.js takes a video URL, short link or 3x id and returns comments for sentiment classification, negative-mention detection, brand tracking and word-of-mouth review. Each command emits one JSON envelope; NO_MATCH means no matching content, not a failure. Pay-per-use rows up to 10000; monthly plans cap search 30, posts 50, comments 60 and return PLAN_LIMIT. No login, no publishing, public content only. On Windows use double quotes or --json-args. Uses: topic research, competitor and KOL checks, comment sentiment review. Triggers: Kuaishou sentiment, Kwai reputation."
+author: "新郑市怪奇信息技术工作室"
 metadata:
   openclaw:
     emoji: "📷"
